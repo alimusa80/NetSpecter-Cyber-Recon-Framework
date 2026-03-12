@@ -35,10 +35,11 @@ NetSpecter combines high-speed asynchronous scanning with a command-driven inter
 
 🛠 Installation
 
-Clone the repository:
+Clone the repository
 
-git clone (https://github.com/alimusa80/NetSpecter-Cyber-Recon-Framework/blob/main/netspecter.py)
-cd netspecter
+```bash
+git clone https://github.com/alimusa80/NetSpecter-Cyber-Recon-Framework.git
+cd NetSpecter-Cyber-Recon-Framework
 
 Install dependencies:
 
