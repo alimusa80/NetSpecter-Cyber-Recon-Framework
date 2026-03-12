@@ -1,77 +1,104 @@
-📄 NetSpecter V6 – Cyber Recon Framework
+# NetSpecter V6 – Cyber Recon Framework
+
+```
 ███╗   ██╗███████╗████████╗███████╗██████╗ ███████╗ ██████╗████████╗███████╗██████╗
 ████╗  ██║██╔════╝╚══██╔══╝██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██╔══██╗
 ██╔██╗ ██║█████╗     ██║   ███████╗██████╔╝█████╗  ██║        ██║   █████╗  ██████╔╝
 ██║╚██╗██║██╔══╝     ██║   ╚════██║██╔═══╝ ██╔══╝  ██║        ██║   ██╔══╝  ██╔══██╗
 ██║ ╚████║███████╗   ██║   ███████║██║     ███████╗╚██████╗   ██║   ███████╗██║  ██║
 ╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+```
 
-               NetSpecter V6 – Cyber Recon Framework
-🚀 Overview
+NetSpecter V6 is a **Python cyber reconnaissance framework** designed for security researchers, penetration testers, and network analysts.
 
-NetSpecter V6 is a modular Python cyber reconnaissance framework designed for security researchers, penetration testers, and network analysts.
+It automates reconnaissance tasks such as **port scanning, subdomain discovery, web directory scanning, and technology detection**, while generating structured **JSON and HTML reports**.
 
-It automates network discovery, subdomain enumeration, web directory scanning, and technology detection while generating structured JSON and HTML reports.
+---
 
-NetSpecter combines high-speed asynchronous scanning with a command-driven interface for efficient, professional reconnaissance.
+# 🚀 Overview
 
-🌟 Features
+NetSpecter combines **asynchronous scanning** with a **command-driven interface** to provide fast and efficient reconnaissance during security assessments.
 
-⚡ Asynchronous high-speed port scanning (1–1024 by default)
+The framework is designed to be **simple, modular, and extensible** for future modules.
 
-🌐 Subdomain discovery using common prefixes or custom wordlists
+---
 
-📂 Web directory brute-force scanning
+# 🌟 Features
 
-🔎 Web technology detection (Apache, Nginx, etc.)
+* ⚡ Asynchronous high-speed port scanning (1–1024)
+* 🌐 Subdomain enumeration
+* 📂 Web directory scanning
+* 🔎 Web technology detection
+* 🌍 WHOIS domain intelligence
+* 📊 JSON & HTML report generation
+* 🧠 Modular command-driven design
+* 💻 Easy to extend
 
-🌍 WHOIS domain intelligence
+---
 
-📊 JSON & HTML report generation
+# 🛠 Installation
 
-🧠 Modular command-driven design (scan, webscan, subdomains, full)
-
-💻 Extensible for future modules
-
-🛠 Installation
-
-Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/alimusa80/NetSpecter-Cyber-Recon-Framework.git
 cd NetSpecter-Cyber-Recon-Framework
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
-Dependencies include:
+---
 
-Python 3.8+
+# 📦 Requirements
 
-aiohttp
+* Python **3.8+**
+* aiohttp
+* python-whois
 
-python-whois
+---
 
-colorama
-
-rich
-
-💻 Usage
+# 💻 Usage
 
 Run NetSpecter:
 
+```bash
 python netspecter.py
-Commands
-Command	Description
-scan	Asynchronous port scan
-webscan	Web directory scan & technology detection
-subdomains	Subdomain enumeration
-full	Complete scan: WHOIS + subdomains + ports + web
-Example Usage
+```
+
+You will be prompted for:
+
+```
+Target (domain/IP):
+Command (scan | webscan | subdomains | full):
+```
+
+---
+
+# 📋 Commands
+
+| Command    | Description                                           |
+| ---------- | ----------------------------------------------------- |
+| scan       | Asynchronous port scan                                |
+| webscan    | Directory scan + technology detection                 |
+| subdomains | Subdomain enumeration                                 |
+| full       | Complete scan (WHOIS + subdomains + ports + web scan) |
+
+---
+
+# 🧪 Example Usage
+
+```
 Target: example.com
 Command: full
+```
 
+Example output:
+
+```
 WHOIS Lookup...
 Registrar: NameCheap
 
@@ -90,36 +117,55 @@ Scanning directories...
 
 Detecting technologies...
 [TECH] nginx
-🗂 Reports
+```
 
-NetSpecter generates structured reports in:
+---
 
-reports/netspecter_report.json – JSON format for automation or further analysis
+# 🗂 Reports
 
-reports/netspecter_report.html – Interactive HTML report with open ports, subdomains, and directories
+NetSpecter automatically generates reports after each scan:
 
-Reports are automatically saved to the reports/ folder after each scan.
+```
+netspecter_report.json
+netspecter_report.html
+```
 
-📦 Project Structure
-netspecter/
+Reports contain:
+
+* Target information
+* Open ports
+* Subdomains
+* Discovered directories
+* Detected technologies
+* Scan duration
+
+---
+
+# 📦 Project Structure
+
+```
+NetSpecter-Cyber-Recon-Framework
 │
-├── netspecter.py            # Main CLI entry
-├── requirements.txt         # Python dependencies
+├── netspecter.py
+├── requirements.txt
 ├── README.md
-│
-├── modules/                 # Core scanning modules
-│   ├── port_scanner.py
-│   ├── subdomain_enum.py
-│   ├── web_scanner.py
-│   ├── tech_detect.py
-│   └── whois_lookup.py
-│
-├── reports/                 # Generated scan reports
-│
-├── wordlists/               # Subdomain & directory wordlists
-│   ├── subdomains.txt
-│   └── directories.txt
-│
-└── utils/                   # Utilities (banner, reporter)
-    ├── banner.py
-    └── reporter.py
+└── LICENSE
+```
+
+---
+
+# ⚠ Disclaimer
+
+This tool is intended **for educational purposes and authorized security testing only**.
+
+Do **not** use NetSpecter against systems without permission.
+
+The author is not responsible for misuse.
+
+---
+
+# 👨‍💻 Author
+
+Ali Musa
+
+GitHub: https://github.com/alimusa80
